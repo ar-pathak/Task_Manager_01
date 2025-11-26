@@ -1,16 +1,36 @@
-import React from 'react'
-
-function Navbar() {
+// Navbar.jsx
+const Navbar = () => {
     return (
-        <div className='flex items-center justify-between h-15 w-4/5  mx-auto px-5 bg-amber-50 shadow-xl rounded-b-lg'>
-            <div>
-                <div id="Logo"><img className='h-10 w-10' src="https://img.freepik.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg?semt=ais_hybrid&w=740&q=80" alt="Logo" /></div>
-            </div>
-            <div>
-                <input className='outline-none border border-black rounded-xl px-2' type="search" name="search" id="search" placeholder="Search here..." />
-            </div>
-        </div>
-    )
-}
+        <nav className="border-b border-slate-200 bg-white/80 backdrop-blur dark:bg-slate-900/80">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+                {/* Logo */}
+                <h1 className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+                    DevBlog
+                </h1>
 
-export default Navbar
+                {/* Menu */}
+                <ul className="hidden gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 sm:flex">
+                    <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
+                        Home
+                    </li>
+                    <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
+                        Posts
+                    </li>
+                    <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
+                        Categories
+                    </li>
+                    <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
+                        About
+                    </li>
+                </ul>
+
+                {/* Button */}
+                <button className="rounded-lg bg-indigo-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600">
+                    Subscribe
+                </button>
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
