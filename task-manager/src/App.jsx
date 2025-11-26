@@ -1,12 +1,16 @@
 import Navbar from "./components/Navbar"
-import TaskContainer from "./components/TaskContainer"
-import Tasklist from "./components/Tasklist"
+import PostContainer from "./components/PostContainer"
 
 const App = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+      {/* Navbar */}
       <Navbar />
-      <TaskContainer />
+
+      {/* Main Content */}
+      <main className="pt-6">
+        <PostContainer />
+      </main>
     </div>
   )
 }
