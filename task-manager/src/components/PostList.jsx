@@ -1,9 +1,23 @@
-import React from 'react'
-import { blogPosts } from '../utils/mockData'
+import React, { useEffect, useState } from 'react'
 import PostCard from './PostCard'
 
 
+
 function PostList() {
+  const [blogPosts, setBlogPosts] = useState([])
+
+  useEffect(() => {
+    try {
+      fetch("http://localhost:5000/blogPosts")
+        .then((res) => res.json())
+        .then((data) => setBlogPosts(data))
+    } catch (error) {
+      console.log(error)
+    }
+
+  }, [])
+
+
   return (
     <div>
       <section className="mx-auto w-full max-w-7xl px-4 py-12">
