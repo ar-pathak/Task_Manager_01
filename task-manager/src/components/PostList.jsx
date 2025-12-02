@@ -14,7 +14,6 @@ function PostList() {
     } catch (error) {
       console.log(error)
     }
-
   }, [])
 
 
