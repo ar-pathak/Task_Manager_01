@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from 'react'
+
 import PostCard from './PostCard'
+import useFetch from '../hooks/useFetch'
 
 
 
 function PostList() {
-  const [blogPosts, setBlogPosts] = useState([])
-
-  useEffect(() => {
-    try {
-      fetch("http://localhost:5000/blogPosts")
-        .then((res) => res.json())
-        .then((data) => setBlogPosts(data))
-    } catch (error) {
-      console.log(error)
-    }
-  }, [])
+  const { data, error } = useFetch("http://localhost:5000/blogPosts");
 
 
   return (
@@ -37,7 +28,8 @@ function PostList() {
       xl:grid-cols-4
     "
         >
-          {blogPosts.map((post) => (
+
+          {error ? console.log(error) : data && data.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
         </div>
