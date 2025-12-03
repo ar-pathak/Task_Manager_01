@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 // Navbar.jsx
 const Navbar = () => {
     return (
@@ -11,16 +13,24 @@ const Navbar = () => {
                 {/* Menu */}
                 <ul className="hidden gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 sm:flex">
                     <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
-                        Home
+                        <NavLink to="/" >
+                            Home
+                        </NavLink>
                     </li>
                     <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
-                        Posts
+                        <NavLink to="/posts" >
+                            Posts
+                        </NavLink>
                     </li>
                     <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
-                        Categories
+                        <NavLink to="/about" >
+                            About
+                        </NavLink>
                     </li>
                     <li className="hover:text-indigo-600 dark:hover:text-indigo-400 cursor-pointer">
-                        About
+                        <NavLink to="/contact" >
+                            Contact
+                        </NavLink>
                     </li>
                 </ul>
 

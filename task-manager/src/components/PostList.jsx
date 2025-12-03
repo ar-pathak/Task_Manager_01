@@ -5,7 +5,7 @@ import useFetch from '../hooks/useFetch'
 
 
 function PostList() {
-  const { data, error } = useFetch("http://localhost:5000/blogPosts");
+  const { data, loading, error } = useFetch("http://localhost:5000/blogPosts");
 
 
   return (
@@ -28,7 +28,7 @@ function PostList() {
       xl:grid-cols-4
     "
         >
-
+          {loading && <p className='text-white'>Loading posts...</p>}
           {error ? console.log(error) : data && data.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
