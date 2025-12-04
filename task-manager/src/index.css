@@ -10,3 +10,22 @@ body {
         linear-gradient(135deg, #ffffff, #f3f4f6);
     background-blend-mode: multiply;
 }
+
+.glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    form input,
+    form textarea,
+    button {
+        transition: box-shadow .18s ease, transform .12s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+        transform: translateY(-2px);
+    }
+}
