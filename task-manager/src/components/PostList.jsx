@@ -3,7 +3,6 @@ import PostCard from './PostCard'
 import useFetch from '../hooks/useFetch'
 
 
-
 function PostList() {
   const { data, loading, error } = useFetch("http://localhost:5000/blogPosts");
 

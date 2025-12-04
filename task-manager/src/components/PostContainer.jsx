@@ -1,9 +1,12 @@
+import { useState } from "react";
+import AddBlogPopup from "./AddBlogPopup"
 import PostList from "./PostList"
 
 const PostContainer = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
     const onAddPost = () => {
-        alert("Add Post Clicked!")
+        setIsOpen(true);
     }
 
     return (
@@ -34,6 +37,7 @@ const PostContainer = () => {
 
 
             <div><PostList /></div>
+            {isOpen && <AddBlogPopup setIsOpen={setIsOpen} />}
         </section>
     )
 }
