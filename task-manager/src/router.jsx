@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router"
 import App from "./App.jsx"
 import PostContainer from "./components/PostContainer.jsx"
 import ContactPage from "./components/Contact.jsx"
+import PostsPage from "./components/PostsPage.jsx"
 const router = createBrowserRouter([
     {
         path: "/",
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "posts",
-                element: <div>posts Page</div>
+                element: <PostsPage />
             }
             , {
                 path: "contact",
